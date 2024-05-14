@@ -1,36 +1,47 @@
-import React,{useEffect,useRef} from "react";
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
+import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
+import "./Partials.css"
 
-function Footer(){
-    //Footer Component
-    const footerRef = useRef(null);
-
-  const setFooterPosition = () => {
-    const body = document.body;
-    const html = document.documentElement;
-    const height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
-    const windowHeight = window.innerHeight;
-
-    if (height > windowHeight) {
-      footerRef.current.style.position = 'relative';
-    } else {
-      footerRef.current.style.position = 'fixed';
-      footerRef.current.style.bottom = '0';
-      footerRef.current.style.width = '100%';
-    }
-  };
-
-  useEffect(() => {
-    setFooterPosition();
-    window.addEventListener('resize', setFooterPosition);
-    return () => window.removeEventListener('resize', setFooterPosition);
-  }, []);
-
-    //End of Logic
-    let year = new Date().getFullYear()
-    return(
-        <footer ref={footerRef} className="footer">
-        <p class="pfoot mt-2">© {year} Vishnusai Bore | All Rights Reserved</p>
-        </footer>
-    )
+function Copyright() {
+  return (
+    <Typography variant="body2" align="center" >
+      {'Copyright © '}
+        Vishnusai Bore {" "}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
 }
-export default Footer
+
+function Footer(props) {
+  const { description, title } = props;
+
+  return (
+    <Box component="footer" sx={{paddingTop:1,paddingBottom:2}} style={{backgroundColor:"#000",color:"#fff"}}>
+      <Container maxWidth="lg">
+        <h6>{title}</h6>
+        <Typography
+          variant="subtitle1"
+          align="center"
+          component="h5"
+        >
+          {description}
+        <Link underline='none' href="/contact"><ConnectWithoutContactIcon /></Link>
+        </Typography>
+        <Copyright />
+      </Container>
+    </Box>
+  );
+}
+
+Footer.propTypes = {
+  description: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
+
+export default Footer;

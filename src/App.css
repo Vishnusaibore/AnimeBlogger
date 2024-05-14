@@ -1,0 +1,70 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: Montserrat,sans-serif;
+}
+body {
+  margin: 0;
+  background-color:whitesmoke;
+  /* background-image: url("https://images.squarespace-cdn.com/content/v1/5fe4caeadae61a2f19719512/1714926847215-JLS43VI5DIEMFHIKBNBJ/61.jpg?format=1400w"); */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h3,h2,h1
+{
+    font-family:Montserrat;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Blog Images */
+ .img-class{
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  transition: transform 0.3s ease-in-out;
+  }
+
+.img-class:hover {
+  transform: scale(1.05);
+} 
+/* End of Blog IMages  */
+
+.homepage{
+  padding-top: 13%;
+  padding-left:3%;
+}
+.homepage p{
+  padding-left: 13%;
+}
+.homeContent{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: aliceblue;
+}
+.homeContent h1{
+  font-size: 33px;
+}
+.homebutton{
+ padding-left: 20%;
+}
+.footer {
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+
+.footer p {
+  color: #645c5cd4;
+}
+
+.blogposts{
+  text-align: center;
+  font-family: fantasy;
+  font-weight: bold;
+  color: tomato;
+}

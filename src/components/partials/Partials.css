@@ -1,0 +1,22 @@
+/* For Header */
+h5{
+    color:#ffcc00;
+    font-family: cursive;
+    text-align: left;
+    padding-top: 5px;
+    padding-left: 5px;
+    flex: 1;
+
+}
+h5:hover{
+    color:#ff8c1a;
+}
+/* For Fotter */
+h6{
+    text-align: center;
+    color: aqua;
+}
+
+h6:hover{
+    color: chocolate;
+}
