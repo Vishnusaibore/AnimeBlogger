@@ -1,5 +1,5 @@
 import React from 'react';
-import './ShareButton.css'
+import { Button } from '@mui/material';
 import ShareIcon from '@mui/icons-material/Share';
 
 function ShareButton(props) {
@@ -7,7 +7,7 @@ function ShareButton(props) {
     if (navigator.share) {
       navigator.share({
         title: props.title,
-        url:"http://localhost:3000/api/shared-post/"+props.url
+        url:"https://animeblogger.onrender.com/api/shared-post/"+props.url
       })
       .then(() => console.log('Shared successfully'))
       .catch((error) => console.error('Error sharing:', error));
@@ -17,9 +17,9 @@ function ShareButton(props) {
   };
 
   return (
-    <button className='share-button' onClick={handleShare}>
+    <Button variant='text' onClick={handleShare}>
       <ShareIcon />
-    </button>
+    </Button>
   );
 };
 

@@ -1,15 +1,16 @@
 /* For Header */
 h5{
-    color:#ffcc00;
+    color:cyan;
     font-family: cursive;
     text-align: left;
     padding-top: 5px;
-    padding-left: 5px;
+    padding-left: 10px;
+    font-size:24px;
     flex: 1;
 
 }
 h5:hover{
-    color:#ff8c1a;
+    color:ghostwhite
 }
 /* For Fotter */
 h6{

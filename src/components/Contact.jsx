@@ -33,7 +33,7 @@ function Connect(){
         <Paper style={styles.paperContainer} elevation={3}>
 
         <Grid item xs={12} sx={{marginBottom:10}}>
-            <Typography variant="h5" align="left" sx={{marginTop:2,marginLeft:2}} style={{color:"blue"}}>
+            <Typography variant="h5" align="left" sx={{marginTop:2,marginLeft:2}} style={{color:"#5c8a8a"}}>
             Contact Us
           </Typography>
           <Typography variant="h4" align="left" sx={{marginTop:2,marginLeft:2}}>
@@ -43,7 +43,7 @@ function Connect(){
         
          <Grid item xs={12} sx={{marginTop:10,marginRight:3}} justifyContent="center">
             <Typography variant='h6' align='center' color="secondary.dark" sx={{paddingRight:9}}>
-                Lets Dive Into The Divine World of Anime...Feel Free To Connect
+              Had Any Queries...? Just Ping me in LinkedIn or contact through the Mail
             </Typography>
             <Typography variant="body1" align='center' sx={{paddingRight:5}}>
               You can connect with us through the following platforms

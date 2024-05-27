@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './LikeButton.css';
+// import './LikeButton.css';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
 function LikeButton(){

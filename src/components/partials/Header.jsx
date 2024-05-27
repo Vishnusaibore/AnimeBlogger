@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Box,Toolbar,Button,Link} from '@mui/material';
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import { createTheme,ThemeProvider } from '@mui/material/styles';
+import Appicon from "./apple-touch-icon.png"
 
 
 
@@ -27,7 +27,6 @@ const theme = createTheme({
 
 const sections = [
   { title: 'Home', url: '/' },
-  { title: 'Sign Up', url: '/signup' },
   { title: 'Blogs', url: '/posts' },
   { title: 'About', url: '/about' },
   { title: 'Contact', url: '/contact' },
@@ -40,10 +39,13 @@ function Header() {
     <React.Fragment>
      <Box sx={{bgcolor:'primary.headerBackground'}}>
       <Toolbar sx={{ borderBottom: 1, borderColor: 'divider'}}>
-        <Link href='/' color="primary.homeicon"><HomeOutlinedIcon /></Link>
+        <Link href='/' color="primary.homeicon">
+         <img src={Appicon} width={"40"} height={"40"} alt="AppIcon"></img>
+        </Link>
         <h5>Anime Blogger</h5>
         <Button variant='outlined' href='/login' sx={{marginRight:1}}>Sign In</Button>
-        <Button variant='outlined' href="/compose">Create Your Blog</Button>
+        <Button variant='outlined' href="/signup" sx={{marginRight:1}}>Sign Up</Button>
+        <Button variant='outlined' href="/compose">create your Blog</Button>
       </Toolbar>
       </Box>
       <Box>

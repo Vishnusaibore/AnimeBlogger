@@ -32,7 +32,8 @@ function Compose(props){
     }
 
     function submitPost(event){
-        props.onAdd(post)
+        let Current_User=props.c_user
+        props.onAdd(post,Current_User)
         event.preventDefault()
         setPost({
             name:"",
@@ -54,7 +55,7 @@ function Compose(props){
     component="form"
     noValidate
     autoComplete="off">
-    <Typography variant="h5" style={{fontFamily:'cursive',color:'#ff0000'}} align="center" 
+    <Typography variant="h5" style={{fontFamily:'serif',color:'#c653c6'}} align="center" 
     gutterBottom sx={{marginTop:2,marginBottom:3}}>
             Compose Your Blog Here...
     </Typography>

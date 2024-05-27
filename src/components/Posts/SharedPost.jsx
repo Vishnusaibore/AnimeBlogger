@@ -7,7 +7,7 @@ import LikeButton from './LikeButton';
 export default function SharedPost() {
   //For Getting the url Paramters i.e is id from pageurl
   const { id } = useParams();
-  const url="http://localhost:5000/api/post/"+id
+  const url="https://animebloggerserver.onrender.com/api/post/"+id
   //For fetching post data from the server of the above id
   const[post,setPost]=useState([])
   //
