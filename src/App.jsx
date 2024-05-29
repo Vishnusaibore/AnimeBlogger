@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from 'react'
-import { BrowserRouter as Router, Route, Routes,} from 'react-router-dom'
+import {Route, Routes,} from 'react-router-dom'
 import axios from 'axios'
 import Cookies from 'js-cookie'
 import {Button, Container,Typography} from '@mui/material';
@@ -149,12 +149,14 @@ removePost(pID)
 
   //
   return (
-    <Container> 
-      <main>
+    <Container>
+    <main>
       {isLoggedIn &&(<Typography align='right' mb={1}>
       <Button onClick={Logout}><LogoutIcon /></Button></Typography>)}
-      <Router><Routes>
-      <Route path="/" element={<HomePage /> } />
+      {/* Common layout elements for your app */}
+      {/* Use conditional rendering or other techniques to display specific child components based on the route */}
+      {window.location.pathname === '/' && <HomePage />} {/* Render Home component on root path */}
+      <Routes>
       <Route path="/signup" element={<SignUp addUser={createAccount}/>} />
       <Route path="/login" element={<Login onLoggin={verifyUser}/>}/>
       <Route path="/password-reset" element={<ForgotPassword onReset={resetPassword} />} />
@@ -174,7 +176,7 @@ removePost(pID)
               delPost={deletePost}
               />))}/>
       <Route path="/api/shared-post/:id" element={<SharedPost/>} />
-      </Routes></Router>
+      </Routes>
       </main>
       </Container>
   );
