@@ -3,19 +3,22 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import Header from './components/partials/Header';
 import Footer from './components/partials/Footer';
-import { BrowserRouter,Routes,Route } from "react-router-dom";
+import {createBrowserRouter,RouterProvider,} from "react-router-dom";
+
+const router = createBrowserRouter([
+    {
+      path: "*",
+      element: <App />,
+    },
+  ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-    <BrowserRouter>
     <Header/>
-    <Routes>
-    <Route path='*' element={<App />}>
-    </Route></Routes>
+    <RouterProvider router={router} />
     <Footer title="Anime Blogger"
     description="Nakama's Feel Free To Connect  " />
-    </BrowserRouter>
     </React.StrictMode>
 );
 
