@@ -7,7 +7,7 @@ function ShareButton(props) {
     if (navigator.share) {
       navigator.share({
         title: props.title,
-        url:"http://localhost:3000/api/shared-post/"+props.url
+        url:"https://animeblogger.onrender.com/#/api/shared-post/"+props.url
       })
       .then(() => console.log('Shared successfully'))
       .catch((error) => console.error('Error sharing:', error));
