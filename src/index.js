@@ -3,20 +3,15 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import Header from './components/partials/Header';
 import Footer from './components/partials/Footer';
-import {createBrowserRouter,RouterProvider,} from "react-router-dom";
-
-const router = createBrowserRouter([
-    {
-      path: "*",
-      element: <App />,
-    },
-  ]);
+import {HashRouter} from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
     <Header/>
-    <RouterProvider router={router} />
+    <HashRouter>
+        <App />
+    </HashRouter>
     <Footer title="Anime Blogger"
     description="Nakama's Feel Free To Connect  " />
     </React.StrictMode>

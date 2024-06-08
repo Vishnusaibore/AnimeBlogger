@@ -21,11 +21,11 @@ function HomePage(){
         <h1>Publish your passions, your way</h1>
         <p>Create a unique and Intresting Anime Blogs easily.</p>
         <div className='pt-1 pb-4 homebutton'>
-            <a href='/compose' role="button" className='btn btn-warning'>Create Your Blog</a>
+            <a href='#/compose' role="button" className='btn btn-warning'>Create Your Blog</a>
         </div>
         <p>Let's Explore Blogs from Anime Blogger...</p>
         <div className='homebutton'>
-        <a href='/posts' role="button" className='btn btn-info'>Read the Blogs</a>
+        <a href='#/posts' role="button" className='btn btn-info'>Read the Blogs</a>
         </div>
         </div>
         </div>

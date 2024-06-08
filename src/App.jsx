@@ -153,18 +153,16 @@ removePost(pID)
     <main>
       {isLoggedIn &&(<Typography align='right' mb={1}>
       <Button onClick={Logout}><LogoutIcon /></Button></Typography>)}
-      {/* Common layout elements for your app */}
-      {/* Use conditional rendering or other techniques to display specific child components based on the route */}
       <Routes>
-      <Route path='/' element={<HomePage />}/>
-      <Route path="signup" element={<SignUp addUser={createAccount}/>} />
-      <Route path="login" element={<Login onLoggin={verifyUser}/>}/>
-      <Route path="password-reset" element={<ForgotPassword onReset={resetPassword} />} />
-      <Route path="about" element={<About />} />
-      <Route path="contact" element={<Contact/>} />
-      <Route path="compose" element={isLoggedIn?(<Compose onAdd={createPost} c_user={Logged_user}/>):
+      <Route path='/' element={<HomePage />} />
+      <Route path="/signup" element={<SignUp addUser={createAccount}/>} />
+      <Route path="/login" element={<Login onLoggin={verifyUser}/>}/>
+      <Route path="/password-reset" element={<ForgotPassword onReset={resetPassword} />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact/>} />
+      <Route path="/compose" element={isLoggedIn?(<Compose onAdd={createPost} c_user={Logged_user}/>):
       (<Login onLoggin={verifyUser}/>)} />
-      <Route path="posts" element={
+      <Route path="/posts" element={
           posts.map(mypost=>(
             <Posts
               key={mypost._id}
@@ -175,7 +173,7 @@ removePost(pID)
               onEdit={editPost}
               delPost={deletePost}
               />))}/>
-      <Route path="api/shared-post/:id" element={<SharedPost/>} />
+      <Route path="/api/shared-post/:id" element={<SharedPost/>} />
       </Routes>
       </main>
       </Container>

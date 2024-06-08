@@ -130,7 +130,7 @@ export default function ForgotPassword(props){
             </Button>
             <Grid container justifyContent="center">
               <Grid item>
-                <Link href="/login" variant="body2">
+                <Link href="#/login" variant="body2">
                  Sign In Now
                 </Link>
               </Grid>

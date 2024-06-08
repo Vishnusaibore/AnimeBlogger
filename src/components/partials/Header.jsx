@@ -27,9 +27,9 @@ const theme = createTheme({
 
 const sections = [
   { title: 'Home', url: '/' },
-  { title: 'Blogs', url: '/posts' },
-  { title: 'About', url: '/about' },
-  { title: 'Contact', url: '/contact' },
+  { title: 'Blogs', url: '#/posts' },
+  { title: 'About', url: '#/about' },
+  { title: 'Contact', url: '#/contact' },
 ];
 
 function Header() {
@@ -43,9 +43,9 @@ function Header() {
          <img src={Appicon} width={"40"} height={"40"} alt="AppIcon"></img>
         </Link>
         <h5>Anime Blogger</h5>
-        <Button variant='outlined' href='/login' sx={{marginRight:1}}>Sign In</Button>
-        <Button variant='outlined' href="/signup" sx={{marginRight:1}}>Sign Up</Button>
-        <Button variant='outlined' href="/compose">create your Blog</Button>
+        <Button variant='outlined' href='#/login' sx={{marginRight:1}}>Sign In</Button>
+        <Button variant='outlined' href="#/signup" sx={{marginRight:1}}>Sign Up</Button>
+        <Button variant='outlined' href="#/compose">create your Blog</Button>
       </Toolbar>
       </Box>
       <Box>
