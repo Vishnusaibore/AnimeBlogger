@@ -31,7 +31,7 @@ function Footer(props) {
           component="h5"
         >
           {description}
-        <Link underline='none' href="/contact"><ConnectWithoutContactIcon /></Link>
+        <Link underline='none' href="#/contact"><ConnectWithoutContactIcon /></Link>
         </Typography>
         <Copyright />
       </Container>

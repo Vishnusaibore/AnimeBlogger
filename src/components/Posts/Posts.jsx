@@ -10,14 +10,20 @@ import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 
 
 export default function Posts(props) {
-  const postId=props.postid
+  const postId = props.postid
+  const postOwner = props.Writer
+  const LogInStatus = props.LogStat
+  const LoggedUser = props.LogUser
+  const pName = props.Title
   //For Editing Blog
 
   //For Handling Edit State is Active or Not
   const[isActive,setActive]=useState(false)
   function handleActive(){
-  setActive(true)
-  }
+    if(LogInStatus===false){ alert("Please SignIn!! To Edit Your Blog")}
+    else if(postOwner!==LoggedUser){ alert("You Not Allowed to Edit Someone'Blog")}
+    else{ setActive(true)}
+    }
   //For Minimizing Edit Icon
   function handleMinimize(){
   setActive(false)
@@ -40,7 +46,7 @@ export default function Posts(props) {
   }
 
   function submitPost(event){
-    props.onEdit(postId,blog)
+    props.onEdit(postId,blog,postOwner,pName)
     event.preventDefault()
     setBlog({
     name:"",
@@ -53,7 +59,7 @@ export default function Posts(props) {
 
   //Delete --BlogPost
   function handleDelete(event){
-    props.delPost(postId)
+    props.delPost(postId,postOwner,pName)
     event.preventDefault();
   }
 
@@ -89,7 +95,7 @@ export default function Posts(props) {
         </Button>
       
       <Button variant='text' onClick={handleActive}><EditNoteIcon /></Button>
-      {isActive &&(<Box sx={{marginTop:1,marginLeft:1, display: 'flex',flexDirection: 'column',alignItems: 'center',
+      {LogInStatus&&(isActive &&(<Box sx={{marginTop:1,marginLeft:1, display: 'flex',flexDirection: 'column',alignItems: 'center',
       }} component="form" noValidate autoComplete="off">
       <Paper>
       <TextField id="outlined-controlled" label="Title" color="primary"
@@ -116,7 +122,7 @@ export default function Posts(props) {
       <RemoveCircleIcon /></Button>
       </div>
       </Paper>
-      </Box>)}
+      </Box>))}
       </CardActions>
     </Card>
     </Container>
