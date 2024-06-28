@@ -128,11 +128,9 @@ export default function SignUp(props) {
             >
               Sign Up
             </Button>
-            <Grid container justifyContent="flex-end">
+            <Grid container justifyContent="center">
               <Grid item>
-                <Link href="#/login" variant="body2">
-                  Already have an account? Sign in
-                </Link>
+                <p>Already have an account?<Link href="#/login" variant="body2"> Sign in </Link></p>
               </Grid>
             </Grid>
           </Box>

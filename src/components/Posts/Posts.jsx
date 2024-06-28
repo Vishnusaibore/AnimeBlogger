@@ -76,7 +76,6 @@ export default function Posts(props) {
         component="img"
         alt="BlogImage"
         image={props.imgURL}
-        sx={{width:720,height:375}}
       />
       </div>
       </CardContent>

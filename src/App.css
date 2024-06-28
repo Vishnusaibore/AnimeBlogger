@@ -20,19 +20,6 @@ h3,h2,h1
     font-weight: bold;
 }
 
-/* Blog Images */
- .img-class{
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ddd;
-  transition: transform 0.3s ease-in-out;
-  }
-
-.img-class:hover {
-  transform: scale(1.05);
-} 
-/* End of Blog IMages  */
-
 .homepage{
   padding-top: 13%;
   padding-left:3%;

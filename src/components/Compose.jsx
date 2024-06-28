@@ -68,7 +68,7 @@ function Compose(props){
     </Item></Grid>
     <Grid xs={8}><Item>
     <TextField fullWidth id="outlined-controlled" label="Blog Image"
-    name="blogImage" value={post.blogImage} onChange={handleInput} 
+    name="blogImage" value={post.blogImage} onChange={handleInput} placeholder='Provide Image URL Here'
     sx={{marginTop:1,marginBottom:2}}
     />
     </Item></Grid>

@@ -21,13 +21,19 @@ function App() {
   //User Registration and Login Routes
   //Register Route
   function createAccount(newUser){
-    async function createUser(){
+    if((newUser.firstName==="")||(newUser.lastName==="")||(newUser.email==="")||(newUser.password==="")){
+      alert("Hold on! Looks like some information is missing to create your account. Please fill in the details to continue.")
+    }
+    else{
+      async function createUser(){
         const register =await axios.post('https://animebloggerserver.onrender.com/api/register',newUser)
         let isregisterdMessage = register.data.message
         setLogIn(register.data.stat)
        alert(isregisterdMessage)
     }
     createUser()
+    }
+    
   }
 
   //The below useState will handles loginStatus
@@ -49,21 +55,29 @@ function App() {
 
   //Login Route
   function verifyUser(loginCredentials){
+    if((loginCredentials.email==="")||(loginCredentials.password==="")){
+      alert("Invalid Credentials ! ")
+    }
+    else{
     async function userLogIn(){
     const logInfo = await axios.post('https://animebloggerserver.onrender.com/api/login',loginCredentials)
     alert(logInfo.data.message)
+    if(logInfo.data.stat===true)
+    {
     const responseToken= logInfo.data.token
     const authToken = responseToken // Get the auth token from the server
-    Cookies.set('authToken', authToken, { expires: 1/24 }); // Setting the authToken cookie to expire in 1 hour
-    setLogIn(logInfo.data.stat);
-    //Setting Cookie to Track the Current User
+    Cookies.set('authToken', authToken, { expires: 1/24 }); //Setting Cookie to Track the Current User
+    setLogIn(true);
+
     const currentUser = logInfo.data.User
     const loggedUser = currentUser //Get the Current User Info from server
     Cookies.set('loggedUser',loggedUser,{expires:1/24});
     setUser(currentUser)
-
-    }
+    }else{
+    setLogIn(logInfo.data.stat);
+    } }
     userLogIn()
+   }  
   }
 
   //Logout
@@ -72,8 +86,8 @@ function App() {
     Cookies.remove('loggedUser');
     setUser("");
     setLogIn(false);
+    alert("Successfully Logged Out")
   }
-
   //Password Reset Route
   function resetPassword(newPassword){
     async function resetUserPassword() {
@@ -88,13 +102,17 @@ function App() {
   //Blog Posts Routes
   //Creating a New post
   function createPost(newPost,current_User){
+    if((newPost.name==="")||(newPost.blogImage==="")||(newPost.content==="")){
+      alert("Alert! Missing Blog Details. Title | Featured Image | Content. Fill these in to Publish.")
+    }
+    else{
     async function postData(){
       const postStatus =await axios.post('https://animebloggerserver.onrender.com/api/posts',newPost,{headers:{
         'header-1':current_User }})
       alert(postStatus.data.message)
       // fetchPosts(); //It wiil fetch the data after data inserted into database
   }
-  postData()
+  postData() }
   }
 
   //Fetching Posts from server
@@ -103,7 +121,7 @@ function App() {
       const response = await axios.get('https://animebloggerserver.onrender.com/api/posts');
       setPost(response.data);
     } catch (error) {
-      console.error('Error fetching notes:', error);
+      console.error('Error fetching Posts :', error);
     }
   };
 
@@ -155,6 +173,7 @@ function deletePost(pid,blogWriter,blogName){
 }
 removePost()
 }
+
 
   //
   return (
