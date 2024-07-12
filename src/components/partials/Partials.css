@@ -15,6 +15,12 @@ h5:hover{
     color: azure;
 }
 
+.navbar-toggler{
+  color: white;
+  height: 32px;
+  width: 46px;
+  border: none;
+}
 .mylink:hover{
     color:#4da6ff;
 }

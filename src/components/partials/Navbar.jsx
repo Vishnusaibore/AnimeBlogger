@@ -1,4 +1,5 @@
 import React from 'react'
+import MenuIcon from '@mui/icons-material/Menu';
 import LogoutIcon from '@mui/icons-material/Logout'
 import Appicon from './apple-touch-icon.png'
 import "./Partials.css"
@@ -14,8 +15,8 @@ function Navbar(props) {
     <div className='container-fluid'>
         <a href="/" className='navbar-brand'><img src={Appicon} width={"40"} height={"40"} alt="AppIcon"></img></a>
         <a href='/' className='navbar-brand'><h5>Anime Blogger</h5></a>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
+        <button className="navbar-toggler btn-outline-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <MenuIcon />
     </button>
     <div className="collapse navbar-collapse" id="navbarNav">
       <ul className="navbar-nav ">
