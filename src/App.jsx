@@ -1,20 +1,18 @@
 import React,{useState, useEffect} from 'react'
-import {Route, Routes,} from 'react-router-dom'
+import {Route, Routes,useLocation} from 'react-router-dom'
 import axios from 'axios'
 import Cookies from 'js-cookie'
-import {Button, Container,Typography} from '@mui/material';
-import LogoutIcon from '@mui/icons-material/Logout';
+import Navbar from './components/partials/Navbar'
 import SignUp from './components/UserPage/Register'
 import Login from './components/UserPage/Login'
 import ForgotPassword from './components/UserPage/resetPassword'
-import HomePage from "./components/HomePage"
 import Posts from './components/Posts/Posts'
 import SharedPost from './components/Posts/SharedPost'
 import Compose from './components/Compose'
 import About from './components/About'
 import Contact from './components/Contact'
 import "./App.css"
-//
+
 function App() {
   const[posts,setPost]=useState([])
   
@@ -93,7 +91,6 @@ function App() {
     async function resetUserPassword() {
       const updateInfo = await axios.patch('https://animebloggerserver.onrender.com/api/forgotpassword',newPassword)
       alert(updateInfo.data.username+ " "+updateInfo.data.message)
-      Logout()
     }
     resetUserPassword()
   }
@@ -131,6 +128,11 @@ function App() {
 
 //Editing a Post
 function editPost(p_id,blog,postOwner,postName){
+  if((blog.name==="")&&(blog.blogImage==="")&&(blog.content===""))
+  {
+    alert("!!! Invalid Deatils | Please Enter valid Details")
+  }
+  else{
   async function updatePost(){
     const url="https://animebloggerserver.onrender.com/api/edit-post/"+p_id
       try{
@@ -140,6 +142,7 @@ function editPost(p_id,blog,postOwner,postName){
     }catch(error){ console.error('Error in Updating the Post:', error); }
   }
   updatePost()
+  }
 }
 
 //For Deleting a post
@@ -151,7 +154,7 @@ function deletePost(pid,blogWriter,blogName){
       case "bsai42358@gmail.com":
         try{
           const deletedInfo = await axios.delete(url,{headers:{'header-4':blogWriter,'header-5':blogName}})
-          alert(blogName,deletedInfo.data.message+" by Admin")
+          alert(deletedInfo.data.message+" by Admin "+blogName)
           fetchPosts()
         }catch(error){console.error('Deletion Error: ',error)}
         break;
@@ -159,7 +162,7 @@ function deletePost(pid,blogWriter,blogName){
       case blogWriter:
         try{
           const deletedInfo = await axios.delete(url,{headers:{'header-4':blogWriter,'header-5':blogName}})
-          alert(deletedInfo.data.message+" by You")
+          alert(deletedInfo.data.message+" by You "+ blogName)
           fetchPosts()
         }catch(error){console.error('Deletion Error: ',error)}
         break;
@@ -173,16 +176,14 @@ function deletePost(pid,blogWriter,blogName){
 }
 removePost()
 }
-
+const location = useLocation();
 
   //
   return (
-    <Container>
+    <div>
+    <Navbar loginVal={isLoggedIn} signOut={Logout}/>
     <main>
-      {isLoggedIn &&(<Typography align='right' mb={1}>
-      <Button onClick={Logout}><LogoutIcon /></Button></Typography>)}
       <Routes>
-      <Route path='/' element={<HomePage />} />
       <Route path="/signup" element={<SignUp addUser={createAccount}/>} />
       <Route path="/login" element={<Login onLoggin={verifyUser}/>}/>
       <Route path="/password-reset" element={<ForgotPassword onReset={resetPassword} />} />
@@ -207,7 +208,49 @@ removePost()
       <Route path="/api/shared-post/:id" element={<SharedPost/>} />
       </Routes>
       </main>
-      </Container>
+      {location.pathname==="/"&&(<div id="testimonial-carousel" className="carousel slide" data-bs-ride="false">
+        <div className="carousel-inner">
+        <div className="carousel-item container-fluid active testimonial-1">
+          <div className='homepage'>
+          <div className='homeContent'>
+          <h1>Publish your passions, your way</h1>
+          <p>Create a unique and Intresting Anime Blogs easily.</p>
+          <div className='pt-1 pb-4 homebutton'>
+            <a href='#/compose' role="button" className='btn btn-warning'>Create Your Blog</a>
+          </div>
+          <p>Let's Explore Blogs from Anime Blogger...</p>
+          <a href='#/posts' role="button" className='btn btn-info'>Read the Blogs</a>
+
+          </div>
+          </div>
+       </div>
+
+       <div className="carousel-item container-fluid testimonial-2">
+       <div className='testimonial-data-2'>
+        <h2>Know Your Audience</h2>
+        <p>Find out which posts are a hit with Blogger’s built-in analytics.</p>
+        <p>You’ll see where your audience is coming from and what they’re interested in.</p>
+        <p>You can even connect your blog directly to Google Analytics for a more detailed look.</p>
+       </div>
+       </div>
+
+       <div className='carousel-item container-fluid testimonial-3'>
+       <div className='testimonial-data-3'>
+       <h2>Hang on to your Memories...</h2>
+       <p>Blogger lets you safely store thousands of posts, photos, and more with Google.</p>
+       <p>Save the moments that matter.</p>
+       </div>
+       </div>
+
+      </div>
+      <button className="carousel-control-prev" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="prev">
+      <span className="carousel-control-prev-icon"></span>
+      </button>
+      <button className="carousel-control-next" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="next">
+        <span className="carousel-control-next-icon"></span> 
+      </button>
+    </div>)}
+      </div>
   );
 }
 

@@ -1,47 +1,25 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
-import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
+import Appicon from "./apple-touch-icon.png"
 import "./Partials.css"
 
-function Copyright() {
+function Footer() {
   return (
-    <Typography variant="body2" align="center" >
-      {'Copyright © '}
-        Vishnusai Bore {" "}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
-function Footer(props) {
-  const { description, title } = props;
-
-  return (
-    <Box component="footer" sx={{paddingTop:1,paddingBottom:2}} style={{backgroundColor:"#000",color:"#fff"}}>
+    <Box component="footer" sx={{paddingTop:1,paddingBottom:2}} style={{backgroundColor:"#000"}}>
       <Container maxWidth="lg">
-        <h6>{title}</h6>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          component="h5"
-        >
-          {description}
-        <Link underline='none' href="#/contact"><ConnectWithoutContactIcon /></Link>
-        </Typography>
-        <Copyright />
+      <div className='copyright'>
+      <div>
+      <a href='https://twitter.com/' className='social-icon'><i class='social-icon fa fa-twitter'></i></a>
+      <a href='https://www.facebook.com/' className='social-icon'><i class='social-icon fa fa-facebook-f'></i></a>
+      <a href='https://www.instagram.com/' className='social-icon'><i class='social-icon fa fa-instagram'></i></a>
+      </div>
+      <p><a href='/'><img src={Appicon} width={"30"} height={"28"} alt="AppIcon"></img></a>{" "}
+      © {new Date().getFullYear()}, Anime Blogger | All Rights Reserved</p>
+    </div>
       </Container>
     </Box>
   );
 }
-
-Footer.propTypes = {
-  description: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-};
 
 export default Footer;

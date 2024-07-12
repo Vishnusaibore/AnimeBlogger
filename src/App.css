@@ -8,8 +8,6 @@ html {
 }
 body {
   margin: 0;
-  background-color:whitesmoke;
-  /* background-image: url("https://images.squarespace-cdn.com/content/v1/5fe4caeadae61a2f19719512/1714926847215-JLS43VI5DIEMFHIKBNBJ/61.jpg?format=1400w"); */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -20,22 +18,60 @@ h3,h2,h1
     font-weight: bold;
 }
 
-.homepage{
-  padding-top: 13%;
-  padding-left:3%;
+/* Testimonials #Homepage */
+.testimonial-1{
+  background-image: url('https://wallpapers.com/images/high/bleach-pc-q6krf6843jyfa27q.webp');
+    background-size: cover;
+    background-position: center;
+    height:565px;
 }
-.homepage p{
+.testimonial-2{
+  /* background-image:url('https://images.alphacoders.com/846/84631.jpg'); */
+  background-image: url('https://wallpaper.forfun.com/fetch/f3/f3cf1adf79a0b917c20380daa99cdc30.jpeg?');
+  background-size: cover;
+  background-position: center;
+  height:565px;
+}
+.testimonial-3{
+  background-image: url('https://wallpaper.forfun.com/fetch/d7/d7a12cf1106ee202c717b2617d457b95.jpeg');
+  background-size: cover;
+  background-position: center;
+  height:565px;
+}
+
+.homepage{
+  padding-top: 7%;
   padding-left: 10%;
+  text-align:center;
 }
 .homeContent{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: aliceblue;
 }
 .homeContent h1{
-  font-size: 33px;
+  font-size: 28px;
 }
-.homebutton{
- padding-left: 20%;
+
+.testimonial-data-2{
+  color:azure;
+  text-align: end;
+}
+.testimonial-data-2 h2{
+  margin-top: 3%;
+  margin-right: 10%;
+}
+
+.testimonial-data-3{
+  text-align: start;
+  color: azure;
+}
+
+.testimonial-data-3 h2{
+  margin-top: 6%;
+  margin-left:2% ;
+}
+.testimonial-data-3 p{
+  margin-left: 2%;
 }
 /*Footer Section */
 .footer {

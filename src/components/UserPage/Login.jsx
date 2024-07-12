@@ -1,14 +1,6 @@
 import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
+import {Box,Grid,Paper,Button,Typography,TextField,Avatar,Link} from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 // TODO remove, this demo shouldn't need to reset the theme.
@@ -41,8 +33,7 @@ export default function Login(props) {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Grid container component="main" sx={{ height: '100vh',marginBottom:3 }}>
-        <CssBaseline />
+      <Grid container component="main" sx={{marginBottom:3 }}>
         <Grid
           item
           xs={false}

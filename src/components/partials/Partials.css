@@ -1,23 +1,39 @@
-/* For Header */
+/*Navbar */
 h5{
     color:cyan;
     font-family: cursive;
-    text-align: left;
     padding-top: 5px;
-    padding-left: 10px;
-    font-size:24px;
-    flex: 1;
+    padding-left:2px;
+    font-size:22px;
 
 }
 h5:hover{
-    color:ghostwhite
-}
-/* For Fotter */
-h6{
-    text-align: center;
-    color: aqua;
+    color:white;
 }
 
-h6:hover{
-    color: chocolate;
+.mylink{
+    color: azure;
 }
+
+.mylink:hover{
+    color:#4da6ff;
+}
+.mybutton {
+margin-right: 8px;
+}
+.logout {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    border: 1px solid #000; /* Optional: add a border */
+  }
+
+  /*Footer */
+  .copyright{
+    color: azure;
+    text-align: center;
+  }
+  .social-icon{
+    color: azure;
+    margin-right: 8px;
+  }
