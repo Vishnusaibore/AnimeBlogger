@@ -3,6 +3,7 @@ import {Route, Routes,useLocation} from 'react-router-dom'
 import axios from 'axios'
 import Cookies from 'js-cookie'
 import Navbar from './components/partials/Navbar'
+import Footer from './components/partials/Footer'
 import SignUp from './components/UserPage/Register'
 import Login from './components/UserPage/Login'
 import ForgotPassword from './components/UserPage/resetPassword'
@@ -14,8 +15,6 @@ import Contact from './components/Contact'
 import "./App.css"
 
 function App() {
-  const[posts,setPost]=useState([])
-  
   //User Registration and Login Routes
   //Register Route
   function createAccount(newUser){
@@ -26,12 +25,10 @@ function App() {
       async function createUser(){
         const register =await axios.post('https://animebloggerserver.onrender.com/api/register',newUser)
         let isregisterdMessage = register.data.message
-        setLogIn(register.data.stat)
        alert(isregisterdMessage)
     }
     createUser()
-    }
-    
+    }  
   }
 
   //The below useState will handles loginStatus
@@ -44,7 +41,7 @@ function App() {
     }
   },[])
 
-  //For Identifying the Current User
+  //For Identifying the Current User 
   const[Logged_user,setUser]=useState("")
   useEffect(()=>{
     const loggedUser = Cookies.get('loggedUser')
@@ -97,6 +94,7 @@ function App() {
   //End of User Register and Login Routes
 
   //Blog Posts Routes
+  const[posts,setPost]=useState([])
   //Creating a New post
   function createPost(newPost,current_User){
     if((newPost.name==="")||(newPost.blogImage==="")||(newPost.content==="")){
@@ -180,7 +178,7 @@ const location = useLocation();
 
   //
   return (
-    <div>
+    <div className="App">
     <Navbar loginVal={isLoggedIn} signOut={Logout}/>
     <main>
       <Routes>
@@ -207,7 +205,7 @@ const location = useLocation();
               />))}/>
       <Route path="/api/shared-post/:id" element={<SharedPost/>} />
       </Routes>
-      </main>
+      
       {location.pathname==="/"&&(<div id="testimonial-carousel" className="carousel slide" data-bs-ride="false">
         <div className="carousel-inner">
         <div className="carousel-item container-fluid active testimonial-1">
@@ -230,7 +228,6 @@ const location = useLocation();
         <h2>Know Your Audience</h2>
         <p>Find out which posts are a hit with Blogger’s built-in analytics.</p>
         <p>You’ll see where your audience is coming from and what they’re interested in.</p>
-        <p>You can even connect your blog directly to Google Analytics for a more detailed look.</p>
        </div>
        </div>
 
@@ -250,7 +247,9 @@ const location = useLocation();
         <span className="carousel-control-next-icon"></span> 
       </button>
     </div>)}
-      </div>
+    </main>
+    <Footer />
+    </div>
   );
 }
 

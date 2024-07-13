@@ -1,7 +1,7 @@
 import React from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import LogoutIcon from '@mui/icons-material/Logout'
-import Appicon from './apple-touch-icon.png'
+import Appicon from './android-chrome-192x192.png'
 import "./Partials.css"
 
 function Navbar(props) {
@@ -13,11 +13,7 @@ function Navbar(props) {
   return(
     <nav className='navbar navbar-expand-lg bg-dark'>
     <div className='container-fluid'>
-        <a href="/" className='navbar-brand'><img src={Appicon} width={"40"} height={"40"} alt="AppIcon"></img></a>
-        <a href='/' className='navbar-brand'><h5>Anime Blogger</h5></a>
-        <button className="navbar-toggler btn-outline-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <MenuIcon />
-    </button>
+        <a href="/" className='navbar-brand'><img src={Appicon} width={"40"} height={"42"} alt="AppIcon"></img></a>
     <div className="collapse navbar-collapse" id="navbarNav">
       <ul className="navbar-nav ">
         <li className="nav-item ">
@@ -34,12 +30,18 @@ function Navbar(props) {
         </li>
       </ul>
     </div>
+    <div className='blogtitle'>
+    <h4>Anime Blogger</h4>
+    </div>
     <div className=''>
     <a class="btn btn-primary mybutton" href="#/login" role="button">Login</a>
     <a class="btn btn-secondary mybutton" href="#/signup" role="button">Sign up</a>
     <a class="btn btn-warning mybutton" href="#/compose" role="button">Create Your Blog</a>
     {login&&<button onClick={handleLogout}  className="btn btn-sm btn-outline-light logout"><LogoutIcon /></button>}
     </div>
+    <button className="navbar-toggler btn-outline-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <MenuIcon />
+    </button>
     </div>
     </nav>
   )

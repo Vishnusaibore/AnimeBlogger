@@ -117,7 +117,7 @@ export default function SignUp(props) {
             </Button>
             <Grid container justifyContent="center">
               <Grid item>
-                <p>Already have an account?<Link href="#/login" variant="body2"> Sign in </Link></p>
+                <p>Already have an account?<Link href="#/login" variant="body2"> Login </Link></p>
               </Grid>
             </Grid>
           </Box>

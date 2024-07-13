@@ -68,7 +68,7 @@ export default function ForgotPassword(props){
           <Typography component="h1" variant="h5">
             Forgot Password?
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3,mb:2 }}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <TextField
@@ -120,7 +120,7 @@ export default function ForgotPassword(props){
             <Grid container justifyContent="center">
               <Grid item>
                 <Link href="#/login" variant="body2">
-                 Sign In Now
+                 Login Now
                 </Link>
               </Grid>
             </Grid>

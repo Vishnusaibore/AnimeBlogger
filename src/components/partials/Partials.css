@@ -1,16 +1,16 @@
 /*Navbar */
-h5{
-    color:cyan;
-    font-family: cursive;
-    padding-top: 5px;
-    padding-left:2px;
-    font-size:22px;
-
-}
-h5:hover{
+h4{
     color:white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+}
+h4:hover{
+    color:skyblue
 }
 
+.blogtitle{
+  margin-right: 13%;
+}
 .mylink{
     color: azure;
 }

@@ -8,7 +8,7 @@ const styles = {
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     width: '100%',
-    height: '100%',
+    height: '780px',
     display: 'flex-grow',
     justifyContent: 'center',
     alignItems: 'center',
@@ -17,7 +17,7 @@ const styles = {
 
 function About() {
   return (
-    <Container maxWidth="lg" sx={{marginTop:4,paddingBottom:4}}>
+    <Container maxWidth="xl" sx={{marginTop:4,paddingBottom:4}}>
     <Paper style={styles.paperContainer} elevation={3}>
       <Grid container spacing={3} sx={{paddingBottom:10}}>
         <Grid item xs={12}>

@@ -18,7 +18,7 @@ const styles = {
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     width: '100%',
-    height: '100%',
+    height: '780px',
     display: 'flex-grow',
     // justifyContent: 'center',
     //  alignItems: 'center',
@@ -36,7 +36,7 @@ function Connect(){
             <Typography variant="h5" align="left" sx={{marginTop:2,marginLeft:2}} style={{color:"#5c8a8a"}}>
             Contact Us
           </Typography>
-          <Typography variant="h4" align="left" sx={{marginTop:2,marginLeft:2}}>
+          <Typography variant="h5" align="left" sx={{marginTop:2,marginLeft:2}}>
             How can we help You?
           </Typography>
          </Grid>
