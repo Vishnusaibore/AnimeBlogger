@@ -11,6 +11,7 @@ function Navbar(props) {
         event.preventDefault()
     }
   return(
+    <section id="header">
     <nav className='navbar navbar-expand-lg bg-dark'>
     <div className='container-fluid'>
         <a href="/" className='navbar-brand'><img src={Appicon} width={"40"} height={"42"} alt="AppIcon"></img></a>
@@ -44,6 +45,7 @@ function Navbar(props) {
     </button>
     </div>
     </nav>
+    </section>
   )
 }
 

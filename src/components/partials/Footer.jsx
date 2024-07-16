@@ -6,7 +6,8 @@ import "./Partials.css"
 
 function Footer() {
   return (
-    <Box component="footer" sx={{paddingTop:1,paddingBottom:2}} style={{backgroundColor:"#000"}}>
+    <section id="footer">
+    <Box component="footer" sx={{paddingTop:1,paddingBottom:2}}>
       <Container maxWidth="lg">
       <div className='copyright'>
       <div>
@@ -19,6 +20,7 @@ function Footer() {
     </div>
       </Container>
     </Box>
+    </section>
   );
 }
 

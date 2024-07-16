@@ -4,90 +4,30 @@
   box-sizing: border-box;
 }
 html {
-  height: 100%;
-  font-family: Montserrat,sans-serif;
+  font-family: "Montserrat";
 }
 body {
-  height: 100%;
-  margin: 0;
+  background-color:black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-h3,h2,h1
-{
-    font-family:Montserrat;
-    font-size: 1.5rem;
-    font-weight: bold;
+
+/* Google Fonts */
+.rubik-wet-paint-regular {
+  font-family: "Rubik Wet Paint", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
 
-/* Testimonials #Homepage */
-.testimonial-1{
-  background-image: url('https://wallpapers.com/images/high/bleach-pc-q6krf6843jyfa27q.webp');
-    background-size:cover;
-    background-position:center;
-    height: 768px;
-}
-.testimonial-2{
-  /* background-image:url('https://images.alphacoders.com/846/84631.jpg'); */
-  background-image: url('https://wallpapers.com/images/high/tanjiro-aesthetic-flames-4gdmxtlmbkca71r4.webp');
-  background-size:cover;
-  background-position: center;
-  height:768px;
-}
-.testimonial-3{
-  background-image: url('https://wallpaper.forfun.com/fetch/d7/d7a12cf1106ee202c717b2617d457b95.jpeg');
-  background-size: cover;
-  background-position: center;
-  height:768px;
+.alfa-slab-one-regular {
+  font-family: "Alfa Slab One", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.homepage{
-  padding-top: 7%;
-  padding-left: 10%;
-  text-align:center;
-}
-.homeContent{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: aliceblue;
-}
-.homeContent h1{
-  font-size: 28px;
-}
-
-.testimonial-data-2{
-  color:azure;
-  text-align: end;
-}
-.testimonial-data-2 h2{
-  margin-right: 2%;
-  margin-top: 4%;
-}
-
-.testimonial-data-3{
-  text-align: start;
-  color: azure;
-}
-
-.testimonial-data-3 h2{
-  margin-top: 6%;
-  margin-left:2% ;
-}
-.testimonial-data-3 p{
-  margin-left: 2%;
-}
-
-.blogposts{
-  text-align: center;
-  font-family: fantasy;
-  font-weight: bold;
-  color: tomato;
-}
-
-.minimize{
-  text-align: end;
-}
-
-/* New Styling */
 .App {
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
+
