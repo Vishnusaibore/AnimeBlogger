@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from '@mui/material';
 import ShareIcon from '@mui/icons-material/Share';
 
 function ShareButton(props) {
@@ -17,9 +16,9 @@ function ShareButton(props) {
   };
 
   return (
-    <Button variant='text' onClick={handleShare}>
+    <button  onClick={handleShare} className='btn btn-sm share-btn'> 
       <ShareIcon />
-    </Button>
+    </button>
   );
 };
 

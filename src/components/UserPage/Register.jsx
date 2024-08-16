@@ -1,9 +1,7 @@
 import * as React from 'react';
 import {Container,Box,Grid,Button,Typography,TextField,Avatar,Link,FormControlLabel,Checkbox} from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-const defaultTheme = createTheme();
 
 export default function SignUp(props) {
     const[user,setUser]=React.useState({
@@ -33,8 +31,8 @@ export default function SignUp(props) {
   };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="xs" style={{backgroundColor:"#fff"}}>
+      <div id="register">
+      <Container component="div" maxWidth="xs" sx={{padding:2}} style={{backgroundColor:"#fff"}}>
         <Box
           sx={{
             marginTop:2,
@@ -43,7 +41,7 @@ export default function SignUp(props) {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m:1 }} style={{backgroundColor:"#ac4ac9"}}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -117,12 +115,12 @@ export default function SignUp(props) {
             </Button>
             <Grid container justifyContent="center">
               <Grid item>
-                <p>Already have an account?<Link href="#/login" variant="body2"> Login </Link></p>
+                <p>Already have an account?<Link href="#/login" variant="body2"> Sign in </Link></p>
               </Grid>
             </Grid>
           </Box>
         </Box>
       </Container>
-    </ThemeProvider>
+      </div>
   );
 }

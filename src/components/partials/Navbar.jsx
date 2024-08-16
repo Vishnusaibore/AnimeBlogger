@@ -21,7 +21,7 @@ function Navbar(props) {
           <a className="nav-link mylink" aria-current="page" href="/">Home</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link mylink" href="#/posts">Blogs</a>
+          <a className="nav-link mylink" href="#/myposts">Blogs</a>
         </li>
         <li className="nav-item">
           <a className="nav-link mylink" href="#/about">About</a>
@@ -35,9 +35,9 @@ function Navbar(props) {
     <h4>Anime Blogger</h4>
     </div>
     <div className=''>
-    <a class="btn btn-primary mybutton" href="#/login" role="button">Login</a>
-    <a class="btn btn-secondary mybutton" href="#/signup" role="button">Sign up</a>
-    <a class="btn btn-warning mybutton" href="#/compose" role="button">Create Your Blog</a>
+    <a className="btn btn-dark btn-sm mybutton " href="#/signup" role="button">Sign Up</a>
+    <a className="btn btn-light btn-sm mybutton " href="#/login" role="button">Sign In</a>
+    
     {login&&<button onClick={handleLogout}  className="btn btn-sm btn-outline-light logout"><LogoutIcon /></button>}
     </div>
     <button className="navbar-toggler btn-outline-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

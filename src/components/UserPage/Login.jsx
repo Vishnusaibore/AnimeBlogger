@@ -1,11 +1,6 @@
 import * as React from 'react';
 import {Box,Grid,Paper,Button,Typography,TextField,Avatar,Link} from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-// TODO remove, this demo shouldn't need to reset the theme.
-
-const defaultTheme = createTheme();
 
 export default function Login(props) {
     const[user,getUser]=React.useState({
@@ -32,8 +27,8 @@ export default function Login(props) {
 //
 
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <Grid container component="main" sx={{marginBottom:3 }}>
+      <div className='container-fluid' id="login">
+      <Grid container component="div" sx={{marginBottom:3 }}>
         <Grid
           item
           xs={false}
@@ -42,8 +37,6 @@ export default function Login(props) {
           sx={{
             backgroundImage: 'url(https://img.freepik.com/free-vector/computer-login-concept-illustration_114360-7962.jpg)',
             backgroundRepeat: 'no-repeat',
-            backgroundColor: (t) =>
-              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -62,7 +55,7 @@ export default function Login(props) {
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Login
+              Sign in
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField
@@ -95,7 +88,7 @@ export default function Login(props) {
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Login
+                Sign in
               </Button>
               <Grid container>
                 <Grid item xs>
@@ -113,6 +106,6 @@ export default function Login(props) {
           </Box>
         </Grid>
       </Grid>
-    </ThemeProvider>
+      </div>
   );
 }

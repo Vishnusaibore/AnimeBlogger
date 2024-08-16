@@ -25,7 +25,9 @@
     height: 300px;
     float: right;
   }
-
+  .mybtn{
+    margin-bottom: 5px;
+  }
   .intro2{
     align-content: end;
     padding-bottom: 3%;
@@ -81,5 +83,5 @@
 
   .comm-img{
     float: right;
-    height: 200px;
+    height: 180px;
   }

@@ -1,23 +1,4 @@
-
-.blogposts{
-  text-align: center;
-  font-family: fantasy;
-  font-weight: bold;
-  color: tomato;
-}
-
-/* Blog Images */
-.img-class{
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ddd;
-  transition: transform 0.3s ease-in-out;
-  }
-
-.img-class:hover {
-  transform: scale(1.05);
-} 
-/* End of Blog IMages  */
+/* Like Button */
 .like-button {
     background-color:#fff;
     color:grey;
@@ -25,11 +6,67 @@
     padding: 5px 10px;
     cursor: pointer;
   }
-  
+
   .like-button.liked {
     color: #ff002b;
   }
 
-  .minimize{
-    text-align: end; /*Minimize Button */
+  .card{
+    padding-top: 1%;
+    padding-bottom: 2%;
+    margin-bottom: 3%;
+  }
+  .card-title{
+    text-align: center;
+    color: #e43d12;
+    padding: 1%;
+  }
+  .p-date{
+    padding-left: 4%;
+  }
+  .p-auth{
+    color: #5680e9;
+    padding-left: 4%;
+  }
+  .card-img-top{
+    padding-left:12%;
+    padding-right: 4%;
+    width:90%;
+    transition: transform 0.3s ease-in-out;
+  }
+  .card-img-top:hover{
+    transform: scale(1.05);
+  }
+
+  .card-body{
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-bottom: 4%;
+  }
+  .card-actions{
+    padding-left: 4%;
+  }
+  form.create-note {
+    position: relative;
+    width: 100%;
+    margin: 30px auto 20px auto;
+    background-color: #d1e8e2;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgb(138, 137, 137);
+  }
+  .delete-window{
+    padding: 2%;
+    background-color: aquamarine;
+    text-align: center;
+  }
+  .del-btn{
+    color: #efb11d;
+  }
+  .edit-btn,.share-btn{
+    color: #5680e9;
+  }
+  .mini-btn{
+    text-align: end;
+    color:#e43d12;
   }

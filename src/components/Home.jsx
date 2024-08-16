@@ -4,7 +4,7 @@ import Obito from "./images/Tobi.png"
 import t1 from "./images/luffy-3.jpg"
 import t2 from "./images/punith.jpeg"
 import t3 from "./images/yuva.jpg"
-import naruto from "./images/naru-bleach.png"
+import t4 from "./images/luffy-1.png"
 import "./home.css"
 function Home() {
   return (
@@ -16,7 +16,7 @@ function Home() {
       <h2>Publish your passions, your way</h2>
       <p>Anime Blogger is your go-to platform for all things anime.</p>
       <p>Create a unique and awesome anime blog easily.</p>
-      <a href='#/compose' role="button" className='btn btn-warning'>Create Your Blog</a>
+      <a href='#/compose' role="button" className='btn btn-warning mybtn mb-2'>Create Your Blog</a>
       </div>
       </div>
 
@@ -25,7 +25,7 @@ function Home() {
       <div className='intro2-data'>
       <h3>Discover Amazing Anime Content</h3>
       <p>Explore a vast collection of blogs written by anime fans from around the world. </p>
-      <a href='#/posts' role='button' className='btn btn-primary'>Explore the Blogs</a>
+      <a href='#/posts' role='button' className='btn btn-primary mt-2'>Explore the Blogs</a>
       </div>
       </div>
 
@@ -48,7 +48,7 @@ function Home() {
      </div>
 
     <div className="col-lg-4 feature-box">
-    <i class="icon fa fa-share-alt fa-3x"></i>
+    <i className="icon fa fa-share-alt fa-3x"></i>
     <h3>Share on Social Media</h3>
     <p>Easily share your favorite blogs and anime content on social media platforms.</p>
     </div>
@@ -102,9 +102,9 @@ function Home() {
       </button>
       </div>
       </div>
-
+      
       <div id="community">
-      <img src={naruto} alt="naruto-bleach" className='comm-img'></img>
+      <img src={t4} alt="naruto-bleach" className='comm-img'></img>
       <h3>Join The Community</h3>
       <p>Become a part of our vibrant anime community.</p>
       <p>Create an account to start writing your own blogs</p>

@@ -1,8 +1,6 @@
 import React,{ useState,useEffect} from 'react'
 import axios from 'axios';
 import { useParams} from 'react-router-dom';
-import {Container,Card,CardActions,CardMedia,CardContent,Typography} from '@mui/material';
-import LikeButton from './LikeButton';
 
 export default function SharedPost() {
   //For Getting the url Paramters i.e is id from pageurl
@@ -25,30 +23,15 @@ export default function SharedPost() {
   //
   
   return (
-    <Container sx={{marginTop:2,marginBottom:3,paddingBottom:2}}>
-    <Card sx={{ maxWidth: 1000 }}>
-    <CardContent align="center">
-    <Typography gutterBottom variant="h5" component="div" color="secondary.dark"  sx={{marginBottom:2}}>
-          {post.name}
-        </Typography>
-    <div className='img-class'>
-      <CardMedia
-        component="img"
-        alt="BlogImage"
-        image={post.blogImage}
-        sx={{width:720,height:375}}
-      />
-      </div>
-      </CardContent>
-      <CardContent>
-        <Typography variant="body2" >
-          {post.content}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <LikeButton />
-      </CardActions>
-    </Card>
-    </Container>
+    <div className='container-xxl'>
+        <div className="card">
+        <h6 className='p-date'>Published on : {post.date}</h6>
+        <h4 className="card-title mb-1">{post.name}</h4>
+        <img src={post.blogImage}  className="card-img-top" alt="BlogImage"/>
+        <div className="card-body">
+        <p>{post.content}</p>
+        </div>
+        </div>
+    </div>
   );
 }

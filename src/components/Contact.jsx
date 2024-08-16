@@ -1,7 +1,8 @@
 import * as React from 'react';
-import {Typography,Paper,Container,Grid,Box,IconButton ,Stack} from '@mui/material';
+import {Paper,Grid,Box,IconButton ,Stack} from '@mui/material';
 import { LinkedIn, GitHub, Mail} from '@mui/icons-material';
 import { styled } from '@mui/material/styles';
+import p1 from "./images/Chopper.png"
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -11,43 +12,26 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
   }));
 
-const styles = {
-  paperContainer: {
-    backgroundImage:`url('https://img.freepik.com/premium-photo/web-contact-us-icons-blue-background-contact-us-cutomer-support-concept-copy-space-website-page-contact-us-web-banner-copy-space-blue-background_256259-1520.jpg?w=826')`,
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-    width: '100%',
-    height: '780px',
-    display: 'flex-grow',
-    // justifyContent: 'center',
-    //  alignItems: 'center',
-  },
-};
-
-
-function Connect(){
+function Contact(){
     return(
-    <Container maxWidth="lg">
-    <Grid container spacing={2} sx={{marginBottom:1,marginTop:3,}}>
-        <Paper style={styles.paperContainer} elevation={3}>
-
-        <Grid item xs={12} sx={{marginBottom:10}}>
-            <Typography variant="h5" align="left" sx={{marginTop:2,marginLeft:2}} style={{color:"#5c8a8a"}}>
-            Contact Us
-          </Typography>
-          <Typography variant="h5" align="left" sx={{marginTop:2,marginLeft:2}}>
-            How can we help You?
-          </Typography>
+    <div id="contact" className='container-fluid'>
+    <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <img src={p1} alt="contactImg" className='contact-img'></img>
+          <div className='contact-heading'>
+          <h2>Get in Touch </h2>
+          <h5>Want to get in touch ? We'd love to hear from you. Here's how you can reach us...</h5>
+          </div>
+          <div className='contact-data'>
+          <h5>Direct Contact</h5>
+          <p>Phone : +91 9705941133</p>
+          <p>Email : bsai42358@gmail.com</p>
+          </div>
          </Grid>
         
-         <Grid item xs={12} sx={{marginTop:10,marginRight:3}} justifyContent="center">
-            <Typography variant='h6' align='center' color="secondary.dark" sx={{paddingRight:9}}>
-              Had Any Queries...? Just Ping me in LinkedIn or contact through the Mail
-            </Typography>
-            <Typography variant="body1" align='center' sx={{paddingRight:5}}>
-              You can connect with us through the following platforms
-            </Typography>
+         <Grid item xs={12} justifyContent="center">
+          <div className='contact-items'>   
+           <h5>You can connect with us through the following platforms</h5>
             <Box
             my={3}
             display="flex"
@@ -88,11 +72,10 @@ function Connect(){
             </Item>
           </Stack>
           </Box>
+          </div>  
         </Grid>
-
-        </Paper>
         </Grid>
-        </Container>
+        </div>
     )
 }
-export default Connect
+export default Contact

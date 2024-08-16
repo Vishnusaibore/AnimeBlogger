@@ -24,10 +24,132 @@ body {
   font-weight: 400;
   font-style: normal;
 }
-
+.lilita-one-regular {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.jim-nightshade-regular {
+  font-family: "Jim Nightshade", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
 .App {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
+/* Register Page */
+#register{
+  padding: 7%;
+  background-image: url("https://images.pexels.com/photos/547114/pexels-photo-547114.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-position: center;
+}
+/* Login Page */
+#login{
+  padding:10%;
+  background-color: #dff9fb;
+}
+/* Reset Password Page */
+#reset-password{
+  padding: 7%;
+  background-image: url("https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-position: center;
+}
+/* Compose Page */
+#compose{
+  font-size: 1em;
+  text-align: center;
+}
+.goku-pic{
+  height:180px;
+  float: right;
+}
+.compose-header{
+  font-family: "Alfa Slab One", serif;
+  padding: 2%;
+  color: #080f5b;
+}
 
+form.create-note {
+  position: relative;
+  width: 100%;
+  margin: 30px auto 20px auto;
+  background-color: #d1e8e2;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+form.create-note input {
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-family: inherit;
+  resize: none;
+  background-color: #d1e8e2;
+}
+
+/* About Page */
+#about{
+  padding-top: 3%;
+  padding-bottom: 5%;
+  padding-left: 3% ;
+  padding-right: 4%;
+  color:#2e151b;
+  background-color:#d1e8e2;
+}
+.about-h3{
+  font-family:"Lilita One", sans-serif;
+  text-align: center;
+  color:#080f5b;
+}
+.about-h3:hover{
+  color: #ac4ac9;
+}
+.about-content{
+  text-align: center;
+  font-family: cursive;
+}
+.about-h4{
+  padding-top: 3%;
+  font-family: "Jim Nightshade", cursive;
+  color:#080f5b;
+  text-align: center;
+}
+.about-img{
+  float:right;
+  height: 200px;
+}
+
+/* Contact */
+#contact{
+  background-color: #f7f1e3;
+  color:#2c2c54;
+  padding-top:3%;
+  padding-left: 3%;
+  padding-bottom:1%;
+  padding-right:6%;
+}
+.contact-heading{
+  text-align: start;
+  font-family:"Lilita One", sans-serif;
+  padding-bottom: 1%;
+}
+.contact-heading h2{
+  color: #ac4ac9;
+}
+.contact-img{
+  float: right;
+  height: 180px;
+}
+.contact-data{
+  color: #86c232;
+  padding:2%;
+  width: 350px;
+}
+.contact-items{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #ac4ac9;
+  text-align: center;
+}

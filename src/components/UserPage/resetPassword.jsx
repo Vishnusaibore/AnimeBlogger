@@ -1,9 +1,6 @@
 import * as React from 'react';
 import {Container,Box,Grid,Button,Typography,TextField,Avatar,Link} from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-const defaultTheme = createTheme();
 
 export default function ForgotPassword(props){
     const[userdata,setPassword]=React.useState({
@@ -23,7 +20,7 @@ export default function ForgotPassword(props){
     function validatePassword(){
         let newPass = userdata.password
         let retypedPass =userdata.confirmPassword 
-        if(newPass===retypedPass){
+        if((newPass===retypedPass)&&(newPass!=="")){
             return true
         }
         else{
@@ -52,8 +49,8 @@ export default function ForgotPassword(props){
   };
 
   return(
-    <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="xs" style={{backgroundColor:"#fff"}}>
+    <div className='container-fluid' id="reset-password">
+      <Container component="div" maxWidth="xs" sx={{padding:2}} style={{backgroundColor:"#fff"}}>
         <Box
           sx={{
             marginTop: 4,
@@ -120,14 +117,14 @@ export default function ForgotPassword(props){
             <Grid container justifyContent="center">
               <Grid item>
                 <Link href="#/login" variant="body2">
-                 Login Now
+                 Sign in Now
                 </Link>
               </Grid>
             </Grid>
           </Box>
         </Box>
       </Container>
-    </ThemeProvider>
+    </div>
   )
 
 }

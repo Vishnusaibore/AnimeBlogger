@@ -8,7 +8,7 @@ import Home from './components/Home'
 import SignUp from './components/UserPage/Register'
 import Login from './components/UserPage/Login'
 import ForgotPassword from './components/UserPage/resetPassword'
-import Posts from './components/Posts/Posts'
+import MyPosts from './components/Posts/MyPosts'
 import SharedPost from './components/Posts/SharedPost'
 import Compose from './components/Compose'
 import About from './components/About'
@@ -16,6 +16,21 @@ import Contact from './components/Contact'
 import "./App.css"
 
 function App() {
+
+// Create a new Date object
+const today = new Date();
+const day = String(today.getDate()).padStart(2, '0'); // Get the day and pad with leading zero if necessary
+const year = today.getFullYear(); // Get the full year
+// Array of month names
+const monthNames = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+// Get the month name
+const month = monthNames[today.getMonth()];
+// Format the date as day-month-year
+const formattedDate = `${day} ${month}, ${year}`;
+
   //User Registration and Login Routes
   //Register Route
   function createAccount(newUser){
@@ -104,7 +119,7 @@ function App() {
     else{
     async function postData(){
       const postStatus =await axios.post('https://animebloggerserver.onrender.com/api/posts',newPost,{headers:{
-        'header-1':current_User }})
+        'header-1':current_User,'header-date':formattedDate}})
       alert(postStatus.data.message)
       // fetchPosts(); //It wiil fetch the data after data inserted into database
   }
@@ -153,7 +168,7 @@ function deletePost(pid,blogWriter,blogName){
       case "bsai42358@gmail.com":
         try{
           const deletedInfo = await axios.delete(url,{headers:{'header-4':blogWriter,'header-5':blogName}})
-          alert(deletedInfo.data.message+" by Admin "+blogName)
+          alert(blogName+" Titled "+deletedInfo.data.message+" by Admin! ")
           fetchPosts()
         }catch(error){console.error('Deletion Error: ',error)}
         break;
@@ -161,12 +176,9 @@ function deletePost(pid,blogWriter,blogName){
       case blogWriter:
         try{
           const deletedInfo = await axios.delete(url,{headers:{'header-4':blogWriter,'header-5':blogName}})
-          alert(deletedInfo.data.message+" by You "+ blogName)
+          alert(blogName+" Titled "+deletedInfo.data.message+" by You !")
           fetchPosts()
         }catch(error){console.error('Deletion Error: ',error)}
-        break;
-      case "":
-        alert("Please SigIn! To Delete Your Blog")
         break;
       default:
         alert("You aren't Allowed to Delete Someone's Blog! Please Contact the Admin");
@@ -189,20 +201,23 @@ removePost()
       <Route path="/contact" element={<Contact/>} />
       <Route path="/compose" element={isLoggedIn?(<Compose onAdd={createPost} c_user={Logged_user}/>):
       (<Login onLoggin={verifyUser}/>)} />
-      <Route path="/posts" element={
+      
+      <Route path="/myposts" element={
           posts.map(mypost=>(
-            <Posts
+            <MyPosts
               key={mypost._id}
               postid={mypost._id}
               Title={mypost.name}
               imgURL={mypost.blogImage}
               Content={mypost.content}
               Writer={mypost.owner}
+              postDate={mypost.date}
               LogStat={isLoggedIn}
               LogUser={Logged_user}
               onEdit={editPost}
               delPost={deletePost}
               />))}/>
+      
       <Route path="/api/shared-post/:id" element={<SharedPost/>} />
       </Routes>
     </section>
