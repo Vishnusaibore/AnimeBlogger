@@ -25,7 +25,7 @@ function Home() {
       <div className='intro2-data'>
       <h3>Discover Amazing Anime Content</h3>
       <p>Explore a vast collection of blogs written by anime fans from around the world. </p>
-      <a href='#/posts' role='button' className='btn btn-primary mt-2'>Explore the Blogs</a>
+      <a href='#/myposts' role='button' className='btn btn-primary mt-2'>Explore the Blogs</a>
       </div>
       </div>
 
@@ -71,7 +71,6 @@ function Home() {
       <p>Comment on blogs, join discussions, and connect with like-minded anime enthusiasts.</p>
       </div>
       </div>
-
   </div>
   </div>
 

@@ -1,6 +1,9 @@
 import React,{ useState,useEffect} from 'react'
 import axios from 'axios';
 import { useParams} from 'react-router-dom';
+import LikeButton from './LikeButton';
+import ShareButton from './ShareButton';
+import "./BlogPosts.css"
 
 export default function SharedPost() {
   //For Getting the url Paramters i.e is id from pageurl
@@ -25,12 +28,18 @@ export default function SharedPost() {
   return (
     <div className='container-xxl'>
         <div className="card">
+        <h4 className="card-title mb-2">{post.name}</h4>
         <h6 className='p-date'>Published on : {post.date}</h6>
-        <h4 className="card-title mb-1">{post.name}</h4>
+        <h6 className='p-auth'>🤵 * * * </h6>
         <img src={post.blogImage}  className="card-img-top" alt="BlogImage"/>
         <div className="card-body">
         <p>{post.content}</p>
         </div>
+        <div className='card-actions'>
+        <ShareButton title={post.name} url={post._id} />
+        <LikeButton />
+        </div>
+
         </div>
     </div>
   );

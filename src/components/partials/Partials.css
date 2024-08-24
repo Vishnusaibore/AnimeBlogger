@@ -6,17 +6,18 @@ h4{
     font-style: normal;
 }
 h4:hover{
-    color:#3aafa9;
+  color:#27a19b;
+    
 }
 .blogtitle{
-  margin-right: 18%;
+  margin-right: 24%;
 }
 .mylink{
-    color:azure;
+    color:white;
 }
 
 .navbar-toggler{
-  color: whitesmoke;
+  color:white;
   height: 32px;
   width: 46px;
   border: none;
@@ -25,7 +26,7 @@ h4:hover{
     color:#3FA2F6;
 }
 .mybutton {
-margin-right: 8px;
+margin-right: 6px;
 }
 .logout {
     height: 36px;
@@ -33,7 +34,14 @@ margin-right: 8px;
     border-radius: 50%;
     border: 1px solid #000; /* Optional: add a border */
   }
-
+  .create-blog-btn{
+    background-color:#7234fa;
+    color: white;
+  }
+  .create-blog-btn:hover{
+    background-color:#4e7dff;
+    color: white;
+  }
   /*Footer */
   .copyright{
     color: azure;
